@@ -90,6 +90,13 @@ impl Metadata {
         self.0.is_file()
     }
 
+    /// Returns `true` if this metadata is for a symlink. The
+    /// result is mutually exclusive to the result of
+    /// [`Metadata::is_symlink`].
+    pub const fn is_symlink(&self) -> bool {
+        self.0.is_symlink()
+    }
+
     /// Returns the size of the file, in bytes, this metadata is for.
     #[allow(clippy::len_without_is_empty)]
     pub const fn len(&self) -> u64 {

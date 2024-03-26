@@ -263,6 +263,11 @@ impl VfsNodeAttr {
     pub const fn is_dir(&self) -> bool {
         self.ty.is_dir()
     }
+
+    ///Whether the node is a symlink
+    pub const fn is_symlink(&self) -> bool {
+        self.ty.is_symlink()
+    }
 }
 
 impl VfsDirEntry {
